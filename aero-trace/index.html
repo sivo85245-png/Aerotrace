@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AeroTrace · Laboratório de telemetria</title><link rel="stylesheet" href="style.css">
+<header><strong><i>≋</i> AeroTrace</strong><span>Laboratório de telemetria</span></header>
+<main><div class="intro"><div><small>ANÁLISE DE SINAIS</small><h1>Investigação de voo</h1><p>Compare três sensores de velocidade e investigue divergências ao longo de um voo simulado.</p></div><button id="export">↓ Exportar CSV</button></div>
+<section class="settings"><label>Cenário<select id="scenario"></select></label><label>Limiar de desvio (kt)<input type="number" id="threshold" min="1" max="40" value="8"></label><label>Persistência (amostras)<input type="number" id="persistence" min="1" max="20" value="3"></label></section>
+<div class="layout"><section class="panel"><small>REGISTRO DE VOO · 1 Hz</small><h2>Velocidade indicada</h2><div class="legend"><b>A</b><b>B</b><b>C</b><span>Unidade · nós (kt)</span></div><svg id="plot" viewBox="0 0 760 270" role="img" aria-label="Curvas de velocidade dos canais A, B e C ao longo de 180 segundos"></svg>
+<div class="play"><button id="play">Reproduzir</button><label for="cursor">Instante</label><input type="range" min="0" max="180" value="90" id="cursor"><output id="time"></output></div></section>
+<section class="panel"><small>INSPEÇÃO DO INSTANTE</small><h2>Leituras dos canais</h2><div id="readings"></div><p id="median"></p></section></div>
+<section class="panel bottom"><div><small>ANÁLISE DO REGISTRO COMPLETO</small><h2>Eventos detectados</h2><div id="events"></div></div><details><summary>Conferir o cenário injetado</summary><p id="truth"></p></details></section>
+<footer>AeroTrace / Dados sintéticos · Bancada educacional</footer></main>
+<script src="engine.js"></script><script src="app.js"></script></html>
